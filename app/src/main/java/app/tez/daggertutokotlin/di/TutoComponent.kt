@@ -14,6 +14,5 @@ import javax.inject.Singleton
 interface TutoComponent {
 
     fun inject(application: DaggerTutoApplication)
-
     fun inject(mainActivity: MainActivity)
 }

@@ -10,7 +10,7 @@ import android.content.SharedPreferences
 private const val MY_PREF = "MY_PREF"
 private const val KEY_CURRENT_EMAIL = "KEY_CURRENT_EMAIL"
 
-class SharedPrefsUtils(context: Context) {
+open class SharedPrefsUtils(context: Context) {
 
     private val prefs: SharedPreferences = context.getSharedPreferences(MY_PREF, Context.MODE_PRIVATE)
 

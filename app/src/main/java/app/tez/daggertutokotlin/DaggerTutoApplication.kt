@@ -6,20 +6,20 @@ import app.tez.daggertutokotlin.di.*
 /**
  * Created by Terence Zafindratafa on 31/10/2018
  */
-class DaggerTutoApplication: Application() {
+open class DaggerTutoApplication: Application() {
 
-    private lateinit var tutoComponent: TutoComponent
+    lateinit var tutoComponent: TutoComponent
 
     override fun onCreate() {
         super.onCreate()
-        tutoComponent = DaggerTutoComponent.builder()
-                .appModule(AppModule(this))
-                .storageModule(StorageModule())
-                .utilsModule(UtilsModule())
-                .build()
+        tutoComponent = this.initDagger()
 
         tutoComponent.inject(this)
     }
 
-    fun getTutoComponent(): TutoComponent = tutoComponent
+    protected open fun initDagger(): TutoComponent =  DaggerTutoComponent.builder()
+            .appModule(AppModule(this))
+            .storageModule(StorageModule())
+            .utilsModule(UtilsModule())
+            .build()
 }

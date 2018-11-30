@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         this.setEmailForm()
     }
 
-    private fun configureDI() = (application as DaggerTutoApplication).getTutoComponent().inject(this)
+    private fun configureDI() = (application as DaggerTutoApplication).tutoComponent.inject(this)
 
     private fun setCurrentDate(){
         dateTv = activity_main_date
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         button = activity_main_button
 
         button.setOnClickListener {
-            val savedEmail = emailTv.text.toString()
+            val savedEmail = editText.text.toString()
             prefs.saveCurrentEmail(savedEmail)
             emailTv.text = prefs.getCurrentEmail()
         }
