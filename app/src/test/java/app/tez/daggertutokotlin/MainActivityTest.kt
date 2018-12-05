@@ -19,7 +19,6 @@ import javax.inject.Inject
 class MainActivityTest {
 
     private lateinit var activity: MainActivity
-    @Inject lateinit var dateUtils: DateUtils
 
     @Before
     fun setUp(){
