@@ -1,6 +1,5 @@
 package app.tez.daggertutokotlin.di
 
-import app.tez.daggertutokotlin.DaggerTutoApplication
 import app.tez.daggertutokotlin.MainActivityAndroidTest
 import dagger.Component
 import javax.inject.Singleton

@@ -19,6 +19,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
 }
 
 dependencies {
@@ -38,10 +43,10 @@ dependencies {
     testImplementation "org.robolectric:robolectric:4.0-beta-2-SNAPSHOT"
 
     // DAGGER
-    def dagger_version = '2.17'
+    def dagger_version = '2.19'
     implementation "com.google.dagger:dagger:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
-    kaptTest "com.google.dagger:dagger-compiler:$dagger_version"
+    kaptTest "com.google.dagger:dagger:$dagger_version"
     testImplementation "com.google.dagger:dagger:$dagger_version"
     kaptAndroidTest "com.google.dagger:dagger-compiler:$dagger_version"
     androidTestImplementation "com.google.dagger:dagger:$dagger_version"
